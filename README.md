@@ -8,11 +8,16 @@
 ----
 
 ### 안드로이드 개발 파트
+[🔗링크](https://github.com/greenhelix/Useful_Info_Project/tree/ikhwan/Android)
 
 ### ESP32 아두이노 개발 파트
+[🔗링크](https://github.com/greenhelix/Useful_Info_Project/tree/ikhwan/Arduino)
 
 ### MySQL DB 개발 파트 
+[🔗링크](https://github.com/greenhelix/Useful_Info_Project/tree/ikhwan/DB)
 
 ### MQTT-Protocol 개발 파트 (Server)
+[🔗링크](https://github.com/greenhelix/Useful_Info_Project/tree/ikhwan/Server)
 
 ### 임시 파일 저장소 
+[🔗링크](https://github.com/greenhelix/Useful_Info_Project/tree/ikhwan/Temp)
