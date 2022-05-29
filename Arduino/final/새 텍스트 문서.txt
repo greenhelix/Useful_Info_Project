@@ -1,0 +1,155 @@
+#include <WiFi.h>
+#include <PubSubClient.h>
+#include <Bounce2.h>
+#include <ArduinoJson.h>
+#define a 2
+#define b 4
+#define c 32
+#define d 25
+#define manin 15
+#define manout 0
+#define womanin 33
+#define womanout 26
+
+//와이파이 연결 ~ 브로커 입력
+const char* ssid = "class9";
+const char* password = "kosta9009";
+const char* mqttserver = "test.mosquitto.org";
+
+//JSON 데이터 폼 설정
+const int cap = JSON_OBJECT_SIZE(2);
+char output[128];
+StaticJsonDocument<cap> data;
+
+
+//start espclient instance
+WiFiClient espclient;
+//use espclient as pubsubclient
+PubSubClient client(espclient);
+
+Bounce button_min = Bounce(); //Instantiate a bounce object
+Bounce button_mout = Bounce();
+Bounce button_win = Bounce();
+Bounce button_wout = Bounce();
+
+void initWiFi(){
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  Serial.print("Connecting to Wifi...");
+  while (WiFi.status() != WL_CONNECTED){
+    Serial.print('.');
+    delay(500);
+  }
+  Serial.println(WiFi.localIP());
+}
+
+void reconnect() {
+  while(!client.connected()){
+    Serial.print("Attempting MQTT connection...");
+    if (client.connect("esp32")){
+      Serial.println("connected to broker");
+    }
+    else{
+      Serial.print("failed, rc =");
+      Serial.print(client.state());
+      Serial.println("reconnecting...");
+      delay(1000);
+    }
+  }
+}
+
+//JSON 데이터 폼과 전송결과 확인
+void publish_json() {
+    serializeJson(data, output);
+    if(client.publish("kosta_test", output)){
+      Serial.println("successfully published");
+    }
+    else{
+      Serial.println("could no publish");
+    }
+  }
+
+
+void setup() {
+  Serial.begin(9600); //set data transmission rate to 9600 bits/s
+  initWiFi();
+
+  client.setServer(mqttserver, 1883);
+  
+  button_min.attach(manin, INPUT_PULLUP); //pullup input pin is HIGH when switched is open and LOW when switch is closed
+  button_min.interval(25); //debounce interval of 25 ms
+  button_mout.attach(manout, INPUT_PULLUP);
+  button_mout.interval(25);
+  button_win.attach(womanin, INPUT_PULLUP);
+  button_win.interval(25);
+  button_wout.attach(womanout, INPUT_PULLUP);
+  button_wout.interval(25);
+
+  pinMode(a, OUTPUT);
+  pinMode(b, OUTPUT);
+  pinMode(c, OUTPUT);
+  pinMode(d, OUTPUT);
+
+//  pinMode(b, INPUT_PULLUP);
+
+  data["id"] = 1;
+}
+
+void loop() {
+  button_min.update(); //update bounce instance
+  button_mout.update();
+  button_win.update();
+  button_wout.update();
+
+  if (!client.connected()){
+    reconnect();
+  }
+  client.loop();
+
+//버튼 ~ 데이터 전송
+  if (button_min.fell()){
+    Serial.println("pressed");
+    data["data"] = "min";
+    publish_json();
+  }
+
+  if (button_mout.fell()){
+    Serial.println("pressed");
+    data["data"] = "mout";
+    publish_json();
+  }
+
+  if (button_win.fell()){
+    Serial.println("pressed");
+    data["data"] = "win";
+    publish_json();
+  }
+
+  if (button_wout.fell()){
+    Serial.println("pressed");
+    data["data"] = "wout";
+    publish_json();
+  }
+
+//누를 때마다 불이 들어오는 구조는 별도 구현
+if(digitalRead(manin)==LOW){
+  digitalWrite(a,HIGH);
+}
+else digitalWrite(a,LOW);
+
+if(digitalRead(manout)==LOW){
+  digitalWrite(b,HIGH);
+}
+else digitalWrite(b,LOW);
+
+if(digitalRead(womanin)==LOW){
+  digitalWrite(c,HIGH);
+}
+else digitalWrite(c,LOW);
+
+ if(digitalRead(womanout)==LOW){
+  digitalWrite(d,HIGH);
+}
+else digitalWrite(d,LOW);
+
+}
