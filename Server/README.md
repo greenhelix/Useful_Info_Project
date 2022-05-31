@@ -31,6 +31,7 @@
     
     * [앱에 남녀 비율 값 보내기](https://github.com/greenhelix/Useful_Info_Project/blob/Joong/Server/node-red_pub_to_app.js)
 
+    * [노드래드 flow (import 파일)](https://github.com/greenhelix/Useful_Info_Project/blob/Joong/Server/node-red.json)
 
     여기서 노드래드 함수들은 return 값이나 input이 다 msg 형태를 가진 객체임을 주의해야한다.
 
