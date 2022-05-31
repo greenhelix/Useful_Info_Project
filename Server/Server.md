@@ -19,9 +19,9 @@
 
     ![alt text](nodered.png "node-red")
 
-    섭스크라이브 노드를 이용하면 msg.payload로 아두이노 데이터 값을 받을 수 있다.
+    노드래드를 하나의 MQTT 클라이언트로 생각하면 된다. 섭스크라이브 노드를 이용하여 esp32모듈이 publish하는 내용을 들을 수 있다. 이내용을 알맞게 해석하고 db에 저장하기 위해 function node를 사용해야하는데 다음 javascript 코드를 참고하면 된다.
 
-    function으로 javascript을 이용해  데이터 값을 msg.topic라는 함수로 db에 저장 할 수 있다.
+
 
     ```javascript
     var sex = msg.payload;
@@ -40,4 +40,7 @@
 
     return msg;
     ```
+
+    노드래드 함수들은 return 값이나 input이 다 msg 형태를 가진 객체임을 주의해야한다.ㅇ
+
 * **mySQL**
