@@ -1,0 +1,502 @@
+[
+    {
+        "id": "80aeb825430cc613",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3287520d54481c14",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "71e6c3b92462cf9a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d2c699fddf1a9b19",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fa2fb29d4f6f9c7f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "881662b9c9ee2741",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1bb74320bb0a2560",
+        "type": "mqtt-broker",
+        "name": "mosquitto_1883",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": "60"
+    },
+    {
+        "id": "54ad0c1c4d9b2ec6",
+        "type": "MySQLdatabase",
+        "name": "db",
+        "host": "localhost",
+        "port": "3306",
+        "db": "db",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "714c19406c7c0f7c",
+        "type": "mqtt-broker",
+        "name": "hivemq",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c7ff90763e1bf9c9",
+        "type": "mqtt in",
+        "z": "80aeb825430cc613",
+        "name": "",
+        "topic": "kosta_test",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "1bb74320bb0a2560",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "dcee40a057d17bd1",
+                "c32464fdaeb1833d"
+            ]
+        ]
+    },
+    {
+        "id": "dcee40a057d17bd1",
+        "type": "debug",
+        "z": "80aeb825430cc613",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c32464fdaeb1833d",
+        "type": "function",
+        "z": "80aeb825430cc613",
+        "name": "",
+        "func": "var info = JSON.parse(msg.payload);\nvar data = info.data;\nvar ID = info.id;\nvar date = info.date;\nvar time = info.time;\nif(data == \"min\") {\n    msg.topic = \"INSERT INTO statistics_map (marketID, dates, times, sex, inorout) VALUES (\"+ID+\", '\"+date+\"', '\"+time+\"', 'm', 1)\";\n}\nelse if(data ==\"mout\"){\n    msg.topic = \"INSERT INTO statistics_map (marketID, dates, times, sex, inorout) VALUES (\"+ID+\", '\"+date+\"', '\"+time+\"', 'm', -1)\";\n}\nelse if (data ==\"win\"){\n    msg.topic = \"INSERT INTO statistics_map (marketID, dates, times, sex, inorout) VALUES (\"+ID+\", '\"+date+\"', '\"+time+\"', 'f', 1)\";\n}\nelse if(data == \"wout\"){\n    msg.topic = \"INSERT INTO statistics_map (marketID, dates, times, sex, inorout) VALUES (\"+ID+\", '\"+date+\"', '\"+time+\"', 'f', -1)\";\n}\nelse{\n    return;\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 280,
+        "wires": [
+            [
+                "90fdbe58f7255260",
+                "c201bfd90ebe8bfa"
+            ]
+        ]
+    },
+    {
+        "id": "c201bfd90ebe8bfa",
+        "type": "mysql",
+        "z": "80aeb825430cc613",
+        "mydb": "54ad0c1c4d9b2ec6",
+        "name": "",
+        "x": 830,
+        "y": 280,
+        "wires": [
+            [
+                "42b19a7bea6e62da"
+            ]
+        ]
+    },
+    {
+        "id": "90fdbe58f7255260",
+        "type": "debug",
+        "z": "80aeb825430cc613",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "62980499af53e432",
+        "type": "function",
+        "z": "80aeb825430cc613",
+        "name": "",
+        "func": "var input = msg.payload;\n\nmsg.topic = \"SELECT men, women, ratio FROM manage WHERE marketID = \"+input+\"\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "825fd57daa957ccf",
+                "c201bfd90ebe8bfa"
+            ]
+        ]
+    },
+    {
+        "id": "4c1cf34a899e0a87",
+        "type": "debug",
+        "z": "80aeb825430cc613",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "ea848df6ab710369",
+        "type": "mqtt in",
+        "z": "80aeb825430cc613",
+        "name": "",
+        "topic": "kosta_app",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "1bb74320bb0a2560",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 440,
+        "wires": [
+            [
+                "62980499af53e432",
+                "4c1cf34a899e0a87"
+            ]
+        ]
+    },
+    {
+        "id": "42b19a7bea6e62da",
+        "type": "mqtt out",
+        "z": "80aeb825430cc613",
+        "name": "",
+        "topic": "kosta_ratio",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1bb74320bb0a2560",
+        "x": 1110,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "825fd57daa957ccf",
+        "type": "debug",
+        "z": "80aeb825430cc613",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "27f6bcaea7d9b4cd",
+        "type": "mqtt in",
+        "z": "71e6c3b92462cf9a",
+        "name": "",
+        "topic": "kosta_sex",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "1bb74320bb0a2560",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "19b03a3a26ed1d9a",
+                "9811d10ac2742476"
+            ]
+        ]
+    },
+    {
+        "id": "19b03a3a26ed1d9a",
+        "type": "debug",
+        "z": "71e6c3b92462cf9a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9811d10ac2742476",
+        "type": "function",
+        "z": "71e6c3b92462cf9a",
+        "name": "",
+        "func": "var sex = msg.payload\nvar today = new Date();\nvar time = today.getHours() + '' + today.getMinutes()\nvar date = today.getFullYear()+''+(today.getMonth()+1)+today.getDate();\nvar datetime = date+ '' +time;\nif(sex == \"m\") {\n    //msg.topic = \"INSERT INTO male('ID') VALUES ('\"+datetime+\"')\";\n    msg.topic = \"INSERT INTO male (ID) VALUES (now())\";\n}\nelse if (sex == \"f\"){\n    //msg.topic = \"INSERT INTO male('ID') VALUES ('\"+datetime+\"')\";\n    msg.topic = \"INSERT INTO female (ID) VALUES (now())\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 280,
+        "wires": [
+            [
+                "6e80522b63f9e22e",
+                "e692d4271618759b"
+            ]
+        ]
+    },
+    {
+        "id": "6e80522b63f9e22e",
+        "type": "mysql",
+        "z": "71e6c3b92462cf9a",
+        "mydb": "54ad0c1c4d9b2ec6",
+        "name": "",
+        "x": 690,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e692d4271618759b",
+        "type": "debug",
+        "z": "71e6c3b92462cf9a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4be403a61eae8916",
+        "type": "inject",
+        "z": "71e6c3b92462cf9a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "INSERT INTO male (ID) VALUES (1)",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 330,
+        "y": 440,
+        "wires": [
+            [
+                "6e80522b63f9e22e"
+            ]
+        ]
+    }
+]
